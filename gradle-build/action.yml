@@ -1,0 +1,24 @@
+name: 'Gradle Build'
+description: 'Acción reutilizable que compila, testea y empaqueta proyectos Gradle'
+author: 'Marcos Martin <mmartin@paradigmadigital.com>'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Instala JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: 17
+        distribution:  'temurin'
+
+    - name: Da permisos a gradlew
+      run: chmod +x gradlew
+      shell: bash
+
+    - name: Ejecuta Gradle build
+      run: ./gradlew build
+      shell: bash
+
+branding:
+  icon: 'package'
+  color: 'blue'
