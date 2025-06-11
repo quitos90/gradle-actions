@@ -11,10 +11,6 @@ runs:
         java-version: 17
         distribution:  'temurin'
 
-    - name: Da permisos a gradlew
-      run: chmod +x gradlew
-      shell: bash
-
     - name: Ejecuta Gradle build
       run: ./gradlew build
       shell: bash
