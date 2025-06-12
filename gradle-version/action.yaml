@@ -2,6 +2,11 @@ name: "Get Gradle Version"
 description: "Extract version from Gradle and export it"
 author: 'Marcos Martin <mmartin@paradigmadigital.com>'
 
+outputs:
+  VERSION:
+    description: "Gradle version string"
+    value: ${{ steps.get_version.outputs.VERSION }}
+
 runs:
   using: "composite"
   steps:
